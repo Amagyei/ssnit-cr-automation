@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body { width: 300px; font-family: 'Segoe UI', system-ui, sans-serif; padding: 15px; background: #fdfdfd; margin: 0; }
+        .header { display: flex; align-items: center; margin-bottom: 15px; padding-bottom: 10px; border-bottom: 2px solid #004a99; }
+        .header h3 { color: #004a99; margin: 0; flex: 1; font-size: 16px; }
+        .version { font-size: 10px; color: #999; background: #f0f0f0; padding: 2px 6px; border-radius: 3px; }
+        .input-group { margin-bottom: 12px; }
+        label { display: block; font-size: 11px; font-weight: bold; margin-bottom: 4px; color: #555; text-transform: uppercase; letter-spacing: 0.5px; }
+        input, textarea { width: 100%; box-sizing: border-box; padding: 10px; border: 1px solid #ddd; border-radius: 6px; font-family: 'Consolas', monospace; font-size: 13px; transition: border-color 0.2s; }
+        input:focus, textarea:focus { outline: none; border-color: #004a99; }
+        textarea { height: 140px; resize: none; }
+        .hint { font-size: 10px; color: #888; margin-top: 4px; }
+        .btn-primary { width: 100%; padding: 12px; background: linear-gradient(135deg, #004a99 0%, #003366 100%); color: white; border: none; border-radius: 6px; cursor: pointer; font-weight: bold; font-size: 13px; transition: transform 0.1s, box-shadow 0.2s; }
+        .btn-primary:hover { transform: translateY(-1px); box-shadow: 0 4px 12px rgba(0, 74, 153, 0.3); }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h3>🏛️ SSNIT Automator</h3>
+        <span class="version">v2.5</span>
+    </div>
+    <div class="input-group">
+        <label>Target Period</label>
+        <input type="text" id="period" placeholder="YYYYMM (e.g. 202601)" maxlength="6">
+        <div class="hint">The month you want to capture contributions for</div>
+    </div>
+    <div class="input-group">
+        <label>ER Numbers (1 per line)</label>
+        <textarea id="ers" placeholder="201304729&#10;201405830&#10;202512949"></textarea>
+        <div class="hint">Enter valid 9-digit employer registration numbers</div>
+    </div>
+    <button class="btn-primary" id="go">🚀 Start Scraping</button>
+    <script src="popup.js"></script>
+</body>
+</html>

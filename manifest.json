@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "SSNIT Automator Pro",
+  "version": "2.5.0",
+  "description": "Automates SSNIT Employer portal scraping and contribution capture with data integrity guarantees",
+  "permissions": ["storage", "tabs"],
+  "host_permissions": ["https://app.issas.ssnit.org.gh/*"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://app.issas.ssnit.org.gh/*"],
+      "js": ["content.js"],
+      "css": ["style.css"],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  }
+}
